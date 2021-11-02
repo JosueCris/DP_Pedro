@@ -28,7 +28,7 @@ public class ArbolTest {
                     case 2:
                         System.out.print("\nIngresa un numero a eliminar del arbol: \n> ");
                         numero = sc.nextInt();
-                        raiz.borrar(numero);
+                        raiz.delete(numero);
                         System.out.println("\nThe item was deleted\n");
                         break;
                     case 3:
