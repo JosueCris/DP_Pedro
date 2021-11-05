@@ -55,7 +55,51 @@ public class Ordenamientos {
         System.out.println("Numero de ciclos: " + ciclos);
     }
 
-    public void quickSort(int [] array) {
+    public void shellSort(int [] array, int n) {
+        int intervalo, i, j, k;
+        intervalo = n/2;
+        while (intervalo > 0) {
+            for (i=intervalo; i<n; i++) {
+                j = i-intervalo;
+                while (j >= 0) {
+                    k = j+intervalo;
+                    if (array[j] <= array[k])
+                        j = -1;
+                    else {
+                        int temp;
+                        temp = array[j];
+                        array[j] = array[k];
+                        array[k] = temp;
+                        j -= intervalo;
+                    }
+                }
+            }
+            intervalo = intervalo/2;
+        }
+    }
 
+    public void quickSort(int [] array, int left, int right) {
+        int i, j, central, aux, pivote;
+        central = (left + right)/2;
+        pivote = array[central];
+        i = left;
+        j = right;
+        do {
+            while (array[i] < pivote)
+                i++;
+            while (array[j] > pivote)
+                j--;
+            if (i <= j) {
+                aux = array[i];
+                array[i] = array[j];
+                array[j] = aux;        /* intercambia a[i] con a[j] */
+                i++;
+                j--;
+            }
+        }while (i <= j);
+        if (left < j)
+            quickSort(array, left, j);          /* mismo proceso con sublista izqda */
+        if (i < right)
+            quickSort(array, i, right);           /* mismo proceso con sublista drcha */
     }
 }

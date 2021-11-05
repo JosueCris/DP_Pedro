@@ -35,10 +35,10 @@ public class Arreglo extends Ordenamientos {
     }
 
     public void CreaNumeros(){
-        archivo = new File("Random10000.txt");
+        archivo = new File("Numeros200000.txt");
         String numS;
         int num;
-        for(int con = 0;con<10000;con++){
+        for(int con = 0;con<200000;con++){
             num = (int) (Math.random()*1000+1);
             numS = Integer.toString(num);
             readFile(Integer.toString(con));
@@ -61,8 +61,9 @@ public class Arreglo extends Ordenamientos {
             aux = buff.readLine();
             while (aux != null) {
                 //System.out.println(aux);
-                dato = Integer.parseInt(aux);
-                array[i] = dato;
+//                dato = Integer.parseInt(aux);
+//                array[i] = dato;
+                array[i] = Integer.parseInt(aux);
                 aux = buff.readLine();
                 i++;
             }

@@ -12,8 +12,7 @@ public class Main {
         int longitud = sc.nextInt();
 
         Arreglo arreglos = new Arreglo(file, longitud);
-        //arreglos.cargar(arreglos);
-        arreglos.CreaNumeros();
+        arreglos.cargar(arreglos);
 
 //        System.out.println("\nArreglo Original:");
 //        arreglos.imprime(arreglos.array);
@@ -35,11 +34,29 @@ public class Main {
 //        arreglos.insertionSort(arreglos.array);
 //        arreglos.imprime(arreglos.array);
 //        long finish = System.currentTimeMillis();
-//
-//        System.out.println("\nTime: "+(finish-start)+" ms");
+
+//        System.out.println("\nShell Sort:");
+//        long start = System.currentTimeMillis();
+//        arreglos.shellSort(arreglos.array, 25000);
+//        arreglos.imprime(arreglos.array);
+//        long finish = System.currentTimeMillis();
+
+        System.out.println("\nQuick Sort:");
+        long start = System.currentTimeMillis();
+        arreglos.quickSort(arreglos.array, 0, arreglos.array.length-1);
+        arreglos.imprime(arreglos.array);
+        long finish = System.currentTimeMillis();
+
+        System.out.println("\nTime: "+(finish-start)+" ms");
     }
 }
 
 // Bubble -> 68 ms / 445 ms / 27050 ms
 // Selection -> 59 ms / 322 ms / 11585 ms
 // Insertion -> 52 ms / 288 ms / 2142 ms
+// Shell -> 109 ms / 372 ms / 1042 ms
+// Quick -> 78 ms / 277 ms / 921 ms
+
+// Numeros1000.txt = Insertion -> Selection -> Bubble -> Quick -> Shell
+// Numeros10000.txt = Quick -> Insertion -> Selection -> Shell -> Bubble
+// Numeros100000.txt = Quick -> Shell -> Insertion -> Selection -> Bubble
