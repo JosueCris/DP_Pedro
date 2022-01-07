@@ -27,7 +27,8 @@ public class NodoCola {
 
     public void imprime(){
         System.out.print(dato+" -> ");
-        if (next==null) return;
+        if (next==null)
+            return;
         next.imprime();
     }
 

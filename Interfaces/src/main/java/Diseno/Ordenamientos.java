@@ -2,8 +2,8 @@ package Diseno;
 
 import java.util.Scanner;
 
-public class Ordenamientos {
-    public int [] vector = {6, 5, 4, 8, 1, 9, 7, 2};
+public class Ordenamientos extends Busquedas {
+    public int [] vector = {6, 5, 4, 8, 1, 9, 7, 2, 3};
 
     public void imprime(int array []) {
         for (int i : array)
@@ -74,7 +74,7 @@ public class Ordenamientos {
                     }
                 }
             }
-            intervalo = intervalo/2;
+            intervalo /= 2;
         }
     }
 

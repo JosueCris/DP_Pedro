@@ -49,17 +49,17 @@ public class TreeTest {
                         System.out.println("Higher root: "+root.higherNode()+"\n");
                         break;
                     case 8:
-                        try {
-                            System.out.print("\nInsert your item to search: \n> ");
-                            number = sc.nextInt();
-                            if (root.search(number))
-                                System.out.println("\nFound item!!!\n");
-                            else
-                                System.out.println("\nItem wasn't founded!!!\n");
-                        } catch (NullPointerException npe) {
-                            System.out.println("\nThe root wasn't founded!!!\n");
-                            root = null;
-                        }
+//                        try {
+//                            System.out.print("\nInsert your item to search: \n> ");
+//                            number = sc.nextInt();
+//                            if (root.search(number))
+//                                System.out.println("\nFound item!!!\n");
+//                            else
+//                                System.out.println("\nItem wasn't founded!!!\n");
+//                        } catch (NullPointerException npe) {
+//                            System.out.println("\nThe root wasn't founded!!!\n");
+//                            root = null;
+//                        }
                         break;
                     case 9:
                         System.out.println("\nInsert your item to search the family: \n> ");

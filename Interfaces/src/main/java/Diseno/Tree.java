@@ -71,22 +71,31 @@ public class Tree {
         return higher;
     }
 
-    public boolean search(int value){
-        Tree aux = this;
-        if (aux == null) {
-            return false;
+    public void treeSearch(int value, int count) {
+        if (this == null){
+            System.out.println("Empty Tree!!!");
+            return;
         }
-        else
-            if(value == aux.data) {
-            return  true;
+        count++;
+        if (value == this.data){
+            System.out.println("Found item\nCycles: "+count);
+            return;
+        }
+        if (value < this.data){
+            if (this.left == null){
+                System.out.println("Item doesn't exist\nCycles: "+count);
+                return;
+            }else {
+                this.left.treeSearch(value, count);
             }
-            else
-                if (value < aux.data) {
-                    return left.search(value);
-                }
-                else {
-                    return right.search(value);
-                }
+        }
+        if (value > this.data){
+            if (this.right == null){
+                System.out.println("Item doesn't exist\nCycles: "+count);
+            }else {
+                this.right.treeSearch(value, count);
+            }
+        }
     }
 
     public void FatherAndSon(int value) {
@@ -125,7 +134,22 @@ public class Tree {
         }
     }
 
-    public void delete (int value) {
-        
-    }
+    //    public boolean search(int value){
+//        Tree aux = this;
+//        if (aux == null) {
+//            return false;
+//        }
+//        else
+//            if(value == aux.data) {
+//            return  true;
+//            }
+//            else
+//                if (value < aux.data) {
+//                    return left.search(value);
+//                }
+//                else {
+//                    return right.search(value);
+//                }
+//    }
+
 }

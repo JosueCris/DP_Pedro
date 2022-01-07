@@ -6,13 +6,13 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Nombre del archivo: ");
-        String file = sc.next();
-        System.out.print("Longitud del arreglo: ");
-        int longitud = sc.nextInt();
-
-        Arreglo arreglos = new Arreglo(file, longitud);
-        arreglos.cargar(arreglos);
+//        System.out.print("Nombre del archivo: ");
+//        String file = sc.next();
+//        System.out.print("Longitud del arreglo: ");
+//        int longitud = sc.nextInt();
+//
+        Arreglo arreglos = new Arreglo("Numeros1000.txt", 1000);
+//        arreglos.cargar(arreglos);
 
 //        System.out.println("\nArreglo Original:");
 //        arreglos.imprime(arreglos.array);
@@ -41,13 +41,23 @@ public class Main {
 //        arreglos.imprime(arreglos.array);
 //        long finish = System.currentTimeMillis();
 
-        System.out.println("\nQuick Sort:");
+//        System.out.println("\nQuick Sort:");
+//        long start = System.currentTimeMillis();
+//        arreglos.quickSort(arreglos.array, 0, arreglos.array.length-1);
+//        arreglos.imprime(arreglos.array);
+//        long finish = System.currentTimeMillis();
+//
+//        System.out.println("\nTime: "+(finish-start)+" ms");
+
         long start = System.currentTimeMillis();
-        arreglos.quickSort(arreglos.array, 0, arreglos.array.length-1);
-        arreglos.imprime(arreglos.array);
+        //arreglos.binario(arreglos.vector, 2);
+        if(arreglos.binario_recursivo(arreglos.vector, 8, 0, arreglos.vector.length-1) != -1)
+            System.out.println("Dato encontrado");
+        else
+            System.out.println("Dato NO encontrado");
         long finish = System.currentTimeMillis();
 
-        System.out.println("\nTime: "+(finish-start)+" ms");
+        System.out.println("Time: "+(finish-start)+" ms");
     }
 }
 
